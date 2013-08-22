@@ -1,0 +1,25 @@
+<h1>Listing artciles</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @artciles.each do |artcile| %>
+  <tr>
+    <td><%= artcile.name %></td>
+    <td><%= artcile.content %></td>
+    <td><%= link_to 'Show', artcile %></td>
+    <td><%= link_to 'Edit', edit_artcile_path(artcile) %></td>
+    <td><%= link_to 'Destroy', artcile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Artcile', new_artcile_path %>
